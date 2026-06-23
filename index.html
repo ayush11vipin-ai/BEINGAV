@@ -16,17 +16,11 @@ box-sizing:border-box;
 font-family:'Inter',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 background:#050505;
-color:#ffffff;
+color:#fff;
 overflow-x:hidden;
 }
-
-/* NAVBAR */
 
 header{
 position:fixed;
@@ -38,37 +32,32 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(0,0,0,.75);
-backdrop-filter:blur(15px);
-z-index:9999;
+backdrop-filter:blur(12px);
+z-index:1000;
 border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-font-size:34px;
+font-size:32px;
 font-weight:800;
-letter-spacing:2px;
 }
 
-.logo .red{
+.logo span{
 color:#d40000;
 }
 
 nav a{
 color:#fff;
 text-decoration:none;
-margin-left:32px;
+margin-left:30px;
 font-size:14px;
 font-weight:500;
-letter-spacing:1px;
 text-transform:uppercase;
-transition:.3s;
 }
 
 nav a:hover{
 color:#d40000;
 }
-
-/* HERO */
 
 .hero{
 height:100vh;
@@ -78,8 +67,8 @@ justify-content:center;
 text-align:center;
 padding:0 10%;
 background:
-linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.82)),
-url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1800");
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1800');
 background-size:cover;
 background-position:center;
 }
@@ -89,7 +78,7 @@ max-width:1200px;
 }
 
 .hero h1{
-font-size:78px;
+font-size:82px;
 font-weight:800;
 line-height:1.05;
 margin-bottom:25px;
@@ -97,10 +86,10 @@ margin-bottom:25px;
 
 .hero p{
 font-size:22px;
-line-height:1.8;
+color:#d4d4d4;
 max-width:900px;
 margin:auto;
-color:#d0d0d0;
+line-height:1.8;
 }
 
 .hero-buttons{
@@ -109,25 +98,23 @@ margin-top:40px;
 
 .btn-primary{
 display:inline-block;
-padding:16px 36px;
+padding:16px 34px;
 background:#d40000;
 color:#fff;
 text-decoration:none;
-border-radius:50px;
+border-radius:40px;
 font-weight:600;
 margin-right:15px;
 }
 
 .btn-secondary{
 display:inline-block;
-padding:16px 36px;
-border:1px solid rgba(255,255,255,.25);
+padding:16px 34px;
+border:1px solid rgba(255,255,255,.15);
 color:#fff;
 text-decoration:none;
-border-radius:50px;
+border-radius:40px;
 }
-
-/* SECTION */
 
 section{
 padding:110px 8%;
@@ -136,102 +123,106 @@ padding:110px 8%;
 .section-title{
 font-size:48px;
 font-weight:700;
-margin-bottom:20px;
 text-align:center;
+margin-bottom:15px;
 }
 
 .section-sub{
 text-align:center;
-color:#aaa;
-max-width:850px;
+color:#999;
+max-width:800px;
 margin:auto;
 margin-bottom:60px;
 line-height:1.8;
 }
 
-/* ABOUT */
-
-.about{
-max-width:1100px;
-margin:auto;
-text-align:center;
-font-size:18px;
-line-height:1.9;
-color:#d5d5d5;
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:-80px;
+padding:0 8%;
+position:relative;
+z-index:2;
 }
 
-/* SOLUTIONS */
+.stat-box{
+background:#101010;
+padding:35px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.06);
+text-align:center;
+}
+
+.stat-box h3{
+font-size:40px;
+color:#d40000;
+}
+
+.stat-box p{
+margin-top:10px;
+color:#b5b5b5;
+}
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:28px;
+gap:25px;
 }
 
 .card{
-background:#0f0f0f;
+background:#101010;
 padding:35px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,.06);
-transition:.35s;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 border-color:#d40000;
 }
 
 .card h3{
-font-size:22px;
 margin-bottom:15px;
+font-size:22px;
 }
 
 .card p{
+color:#bdbdbd;
+line-height:1.8;
+}
+
+.cta{
+text-align:center;
+background:#0d0d0d;
+border-radius:25px;
+padding:80px 40px;
+}
+
+.cta h2{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.cta p{
+max-width:800px;
+margin:auto;
 color:#bcbcbc;
 line-height:1.8;
 }
 
-/* INDUSTRIES */
-
-.industry{
-text-align:center;
-font-size:22px;
-font-weight:600;
-}
-
-/* CONTACT */
-
-.contact-box{
-max-width:900px;
-margin:auto;
-text-align:center;
-padding:60px;
-background:#0f0f0f;
-border-radius:25px;
-border:1px solid rgba(255,255,255,.06);
-}
-
-.contact-box a{
-color:#d40000;
-text-decoration:none;
-font-size:22px;
-}
-
-/* FOOTER */
-
 footer{
-padding:40px;
+padding:35px;
 text-align:center;
 border-top:1px solid rgba(255,255,255,.08);
 color:#888;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
 
 .hero h1{
-font-size:46px;
+font-size:48px;
 }
 
 .hero p{
@@ -246,6 +237,10 @@ display:none;
 font-size:34px;
 }
 
+.cta h2{
+font-size:34px;
+}
+
 }
 
 </style>
@@ -256,13 +251,14 @@ font-size:34px;
 <header>
 
 <div class="logo">
-BEING<span class="red">AV</span>
+BEING<span>AV</span>
 </div>
 
 <nav>
-<a href="#">Home</a>
 <a href="#">Products</a>
 <a href="#">Solutions</a>
+<a href="#">Industries</a>
+<a href="#">Resources</a>
 <a href="#">About</a>
 <a href="#">Contact</a>
 </nav>
@@ -276,75 +272,80 @@ BEING<span class="red">AV</span>
 <h1>Connecting People,<br>Spaces & Technology</h1>
 
 <p>
-BeingAV is a USA-based Audio Visual Solutions company delivering innovative technologies that enhance communication, collaboration and engagement across modern workplaces, educational institutions and experience-driven environments.
+Professional Audio Visual Solutions for Enterprise, Education, Government, Experience Centres and Modern Collaboration Environments.
 </p>
 
 <div class="hero-buttons">
-
-<a href="#" class="btn-primary">
-Explore Solutions
-</a>
-
-<a href="#" class="btn-secondary">
-Contact Us
-</a>
-
+<a href="#" class="btn-primary">Explore Solutions</a>
+<a href="#" class="btn-secondary">Contact Us</a>
 </div>
 
 </div>
 
 </section>
 
-<section>
+<div class="stats">
 
-<h2 class="section-title">About BeingAV</h2>
-
-<div class="about">
-
-BeingAV provides professional AV solutions for enterprises, educational institutions, experience centres and technology-driven environments. Our focus is to create connected spaces through reliable, scalable and future-ready audio visual technologies.
-
+<div class="stat-box">
+<h3>Enterprise</h3>
+<p>AV Solutions</p>
 </div>
 
-</section>
+<div class="stat-box">
+<h3>Education</h3>
+<p>Learning Environments</p>
+</div>
+
+<div class="stat-box">
+<h3>Digital</h3>
+<p>Signage Solutions</p>
+</div>
+
+<div class="stat-box">
+<h3>Control</h3>
+<p>Automation Systems</p>
+</div>
+
+</div>
 
 <section>
 
 <h2 class="section-title">Solutions</h2>
 
 <p class="section-sub">
-Comprehensive AV solutions designed for modern communication, collaboration and engagement.
+Innovative AV technologies designed to improve communication, collaboration and engagement.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Corporate AV Solutions</h3>
-<p>Boardrooms, meeting rooms and collaboration spaces.</p>
+<h3>Corporate AV</h3>
+<p>Meeting rooms, boardrooms and enterprise collaboration spaces.</p>
 </div>
 
 <div class="card">
-<h3>Digital Signage</h3>
-<p>High-impact communication and information display systems.</p>
-</div>
-
-<div class="card">
-<h3>Smart Learning Spaces</h3>
+<h3>Smart Learning</h3>
 <p>Interactive classrooms and hybrid learning environments.</p>
 </div>
 
 <div class="card">
-<h3>Experience Centres</h3>
-<p>Immersive technology experiences for visitors and customers.</p>
+<h3>Digital Signage</h3>
+<p>Dynamic communication and information display solutions.</p>
 </div>
 
 <div class="card">
-<h3>Control & Automation</h3>
-<p>Centralized AV management and control platforms.</p>
+<h3>Experience Centres</h3>
+<p>Immersive environments and engaging visitor experiences.</p>
 </div>
 
 <div class="card">
 <h3>AV Infrastructure</h3>
-<p>Signal distribution, connectivity and AV system integration.</p>
+<p>Signal distribution, switching and connectivity technologies.</p>
+</div>
+
+<div class="card">
+<h3>Automation</h3>
+<p>Centralized control and monitoring of AV environments.</p>
 </div>
 
 </div>
@@ -353,36 +354,19 @@ Comprehensive AV solutions designed for modern communication, collaboration and 
 
 <section>
 
-<h2 class="section-title">Industries We Serve</h2>
+<div class="cta">
 
-<div class="grid">
+<h2>Future Ready AV Experiences</h2>
 
-<div class="card"><div class="industry">Corporate</div></div>
-<div class="card"><div class="industry">Education</div></div>
-<div class="card"><div class="industry">Government</div></div>
-<div class="card"><div class="industry">Healthcare</div></div>
-<div class="card"><div class="industry">Hospitality</div></div>
-<div class="card"><div class="industry">Museums & Experience Centres</div></div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="contact-box">
-
-<h2 class="section-title">Let's Connect</h2>
-
-<br>
-
-<a href="mailto:info@beingav.com">
-info@beingav.com
-</a>
+<p>
+BeingAV helps organizations create connected, collaborative and intelligent spaces through professional audio visual technologies.
+</p>
 
 <br><br>
 
-<p>USA</p>
+<a href="#" class="btn-primary">
+Get In Touch
+</a>
 
 </div>
 
@@ -390,7 +374,7 @@ info@beingav.com
 
 <footer>
 
-© 2026 BeingAV. All Rights Reserved.
+© 2026 BeingAV | USA | info@beingav.com
 
 </footer>
 
