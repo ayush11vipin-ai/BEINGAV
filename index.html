@@ -1,382 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BeingAV | Connecting People, Spaces & Technology</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV Professional | Audio & Visual Services</title>
+    <style>
+        /* Base Styling */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #121212; 
+            color: #ffffff; 
+        }
+        
+        /* Header & Navigation */
+        header { 
+            background: #000000; 
+            padding: 2rem; 
+            text-align: center; 
+        }
+        header h1 { 
+            margin: 0; 
+            color: #00e5ff; 
+            letter-spacing: 2px;
+        }
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            padding: 1rem; 
+            background: #1a1a1a; 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a { 
+            color: #ffffff; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        nav a:hover { 
+            color: #00e5ff; 
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        /* Hero Section */
+        .hero { 
+            text-align: center; 
+            padding: 6rem 2rem; 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x1080/222222/333333?text=Hero+Background') center/cover; 
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
 
-<style>
+        /* Content Sections */
+        .section { 
+            padding: 4rem 2rem; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
+        .section h2 {
+            text-align: center;
+            border-bottom: 2px solid #00e5ff;
+            padding-bottom: 10px;
+            margin-bottom: 3rem;
+            display: inline-block;
+        }
+        .section-container {
+            text-align: center;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
+        /* Portfolio Grid */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        .card { 
+            background: #222222; 
+            padding: 20px; 
+            border-radius: 8px; 
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .media-placeholder {
+            background: #333333; 
+            height: 200px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            border-radius: 4px;
+            margin-top: 15px;
+            color: #888888;
+        }
 
-body{
-background:#050505;
-color:#fff;
-overflow-x:hidden;
-}
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:22px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.75);
-backdrop-filter:blur(12px);
-z-index:1000;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.logo{
-font-size:32px;
-font-weight:800;
-}
-
-.logo span{
-color:#d40000;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-margin-left:30px;
-font-size:14px;
-font-weight:500;
-text-transform:uppercase;
-}
-
-nav a:hover{
-color:#d40000;
-}
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:0 10%;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
-url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1800');
-background-size:cover;
-background-position:center;
-}
-
-.hero-content{
-max-width:1200px;
-}
-
-.hero h1{
-font-size:82px;
-font-weight:800;
-line-height:1.05;
-margin-bottom:25px;
-}
-
-.hero p{
-font-size:22px;
-color:#d4d4d4;
-max-width:900px;
-margin:auto;
-line-height:1.8;
-}
-
-.hero-buttons{
-margin-top:40px;
-}
-
-.btn-primary{
-display:inline-block;
-padding:16px 34px;
-background:#d40000;
-color:#fff;
-text-decoration:none;
-border-radius:40px;
-font-weight:600;
-margin-right:15px;
-}
-
-.btn-secondary{
-display:inline-block;
-padding:16px 34px;
-border:1px solid rgba(255,255,255,.15);
-color:#fff;
-text-decoration:none;
-border-radius:40px;
-}
-
-section{
-padding:110px 8%;
-}
-
-.section-title{
-font-size:48px;
-font-weight:700;
-text-align:center;
-margin-bottom:15px;
-}
-
-.section-sub{
-text-align:center;
-color:#999;
-max-width:800px;
-margin:auto;
-margin-bottom:60px;
-line-height:1.8;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:-80px;
-padding:0 8%;
-position:relative;
-z-index:2;
-}
-
-.stat-box{
-background:#101010;
-padding:35px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.06);
-text-align:center;
-}
-
-.stat-box h3{
-font-size:40px;
-color:#d40000;
-}
-
-.stat-box p{
-margin-top:10px;
-color:#b5b5b5;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.card{
-background:#101010;
-padding:35px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.05);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#d40000;
-}
-
-.card h3{
-margin-bottom:15px;
-font-size:22px;
-}
-
-.card p{
-color:#bdbdbd;
-line-height:1.8;
-}
-
-.cta{
-text-align:center;
-background:#0d0d0d;
-border-radius:25px;
-padding:80px 40px;
-}
-
-.cta h2{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.cta p{
-max-width:800px;
-margin:auto;
-color:#bcbcbc;
-line-height:1.8;
-}
-
-footer{
-padding:35px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-color:#888;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:48px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-nav{
-display:none;
-}
-
-.section-title{
-font-size:34px;
-}
-
-.cta h2{
-font-size:34px;
-}
-
-}
-
-</style>
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            background: #000000; 
+            color: #666666;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <header>
+        <h1>[YOUR BRAND NAME]</h1>
+        <p>Premium Audio & Visual Production</p>
+    </header>
 
-<div class="logo">
-BEING<span>AV</span>
-</div>
+    <nav>
+        <a href="#work">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<nav>
-<a href="#">Products</a>
-<a href="#">Solutions</a>
-<a href="#">Industries</a>
-<a href="#">Resources</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</nav>
+    <section class="hero">
+        <h2>Immersive Sound. Captivating Visuals.</h2>
+        <p>Delivering high-end media solutions for forward-thinking brands and artists.</p>
+    </section>
 
-</header>
+    <section id="work" class="section section-container">
+        <h2>Selected Works</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Cinematography Reel</h3>
+                <p>Commercial and narrative visual projects.</p>
+                <div class="media-placeholder">[Embed YouTube/Vimeo Player Here]</div>
+            </div>
+            <div class="card">
+                <h3>Sound Design & Mixing</h3>
+                <p>High-fidelity audio production.</p>
+                <div class="media-placeholder">[Embed Soundcloud/Spotify Player Here]</div>
+            </div>
+            <div class="card">
+                <h3>Live Event Production</h3>
+                <p>A/V setup and execution for live spaces.</p>
+                <div class="media-placeholder">[Add Photo Gallery Here]</div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
+    <section id="services" class="section section-container">
+        <h2>Core Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Video Editing</h3>
+                <p>Color grading, motion graphics, and post-production workflows.</p>
+            </div>
+            <div class="card">
+                <h3>Audio Engineering</h3>
+                <p>Studio recording, mixing, mastering, and podcast editing.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="hero-content">
+    <section id="contact" class="section section-container">
+        <h2>Let's Collaborate</h2>
+        <p>Ready to start your next project? Reach out to discuss rates and availability.</p>
+        <p style="font-size: 1.2rem; color: #00e5ff; font-weight: bold; margin-top: 2rem;">
+            hello@yourwebsite.com
+        </p>
+    </section>
 
-<h1>Connecting People,<br>Spaces & Technology</h1>
-
-<p>
-Professional Audio Visual Solutions for Enterprise, Education, Government, Experience Centres and Modern Collaboration Environments.
-</p>
-
-<div class="hero-buttons">
-<a href="#" class="btn-primary">Explore Solutions</a>
-<a href="#" class="btn-secondary">Contact Us</a>
-</div>
-
-</div>
-
-</section>
-
-<div class="stats">
-
-<div class="stat-box">
-<h3>Enterprise</h3>
-<p>AV Solutions</p>
-</div>
-
-<div class="stat-box">
-<h3>Education</h3>
-<p>Learning Environments</p>
-</div>
-
-<div class="stat-box">
-<h3>Digital</h3>
-<p>Signage Solutions</p>
-</div>
-
-<div class="stat-box">
-<h3>Control</h3>
-<p>Automation Systems</p>
-</div>
-
-</div>
-
-<section>
-
-<h2 class="section-title">Solutions</h2>
-
-<p class="section-sub">
-Innovative AV technologies designed to improve communication, collaboration and engagement.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>Corporate AV</h3>
-<p>Meeting rooms, boardrooms and enterprise collaboration spaces.</p>
-</div>
-
-<div class="card">
-<h3>Smart Learning</h3>
-<p>Interactive classrooms and hybrid learning environments.</p>
-</div>
-
-<div class="card">
-<h3>Digital Signage</h3>
-<p>Dynamic communication and information display solutions.</p>
-</div>
-
-<div class="card">
-<h3>Experience Centres</h3>
-<p>Immersive environments and engaging visitor experiences.</p>
-</div>
-
-<div class="card">
-<h3>AV Infrastructure</h3>
-<p>Signal distribution, switching and connectivity technologies.</p>
-</div>
-
-<div class="card">
-<h3>Automation</h3>
-<p>Centralized control and monitoring of AV environments.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="cta">
-
-<h2>Future Ready AV Experiences</h2>
-
-<p>
-BeingAV helps organizations create connected, collaborative and intelligent spaces through professional audio visual technologies.
-</p>
-
-<br><br>
-
-<a href="#" class="btn-primary">
-Get In Touch
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 BeingAV | USA | info@beingav.com
-
-</footer>
+    <footer>
+        <p>&copy; 2026 [Your Brand Name]. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
